@@ -4,7 +4,7 @@ BASICS
 - different programming languages are optimized for different tasks, python is generally understood to be best for ease of use/learning and as a "jack of all trades" language
 - syntax will change between languages, but many of the concepts we will learn will be the same in any programming language
 '''
-# EXPRESSIONS, VARIABLES, STATEMENTS
+# OPERATORS, EXPRESSIONS, VARIABLES, STATEMENTS
 # an expression is a piece of code that evaluates to a value
 3 + 6  # evaluates to 9
 
@@ -50,6 +50,9 @@ total_cost = 10  # as int
 total_cost = 10.0  # as float
 total_cost = "$10.00"  # as string
 
+# at any point you can check the type of a variable or expression with the type function
+print type(total_cost) # will be string since it was last defined as a string
+
 # you can also convert values from one type to another
 # we will see more use cases for this as we go through the semester
 age = int("21")  # turns string value of 21 to integer value
@@ -60,7 +63,7 @@ age = int("21")  # turns string value of 21 to integer value
 # and we can also create our own functions
 # one example of a built-in function is the "print" function
 # which takes an input of what to print and then writes it out to the terminal when the program is executed
-print("The total cost is " + total_cost)
+print "The total cost is " + total_cost
 # here our input to the function is an expression that evaluates to a single string
 # using what is called "string concatenation" (gluing together two strings)
 
@@ -72,6 +75,6 @@ name = input("What is your name? ")
 # in this case, the call to the function input() is an expression that evaluates to whatever the user types in
 
 # we can then use this value to print out a greeting to the user
-print("Hello, " + name)
+print "Hello, " + name
 
 # now our program can be run multiple times with different input, and our code dynamically adjusts to it
