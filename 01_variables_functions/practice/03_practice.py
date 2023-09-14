@@ -1,6 +1,8 @@
 """
 PROBLEM 3
-Write a function that accepts the cost of a drink as a parameter and returns the total bill including tax and tip. Assume that the tax rate is 8% and the tipping rate is 20%.
+Write a function that accepts the cost of a drink as a parameter 
+and returns the total bill including tax and tip. 
+Assume that the tax rate is 8% and the tipping rate is 20%.
 """
 # let's make a function!
 # this will allow us to reuse this code for multiple
@@ -14,7 +16,9 @@ def calculate_drink_cost(initial_cost):
     total_cost = (initial_cost * TAX_RATE) + (initial_cost * TIPPING_RATE) + initial_cost
     return total_cost
 
+###################################
 cost = float(input("Enter cost of drink: "))
 total = calculate_drink_cost(cost)
 # we will learn more about how to format output later
-print("Your drink will actually cost $" + str(total))
+print(f"Your drink will actually cost ${total:.2f}")
+# print(total)

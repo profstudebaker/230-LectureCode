@@ -13,6 +13,6 @@ avg_meal = float(input("What's the average cost of a meal where you live? "))
 # which will round down to the nearest whole number
 # we do this so you don't have fractions of meals (silly)
 # we divide by 4 to get budget per week
-meals = (monthly_budget / 4) // avg_meal
+meals = (monthly_budget / 4) // avg_meal 
 
 print("You can afford", int(meals), "meals a week.")

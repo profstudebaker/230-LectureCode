@@ -23,23 +23,6 @@ DEFINING OUR OWN FUNCTIONS
 def generate_greeting(name):
     return "Howdy, " + name + "!"
 
-
-# CALLING FUNCTIONS
-# a function definition is just a definition
-# to actually run the code, you have to call the function
-# when you call a function, you pass in "arguments"
-# for each expected parameter value
-# since our function only defined one parameter, we pass in one argument
-print(generate_greeting("Partner"))
-# above we are printing out the returned value from our function
-# we could also save it to a variable and then print it or do something else with it
-greeting = generate_greeting("Partner")
-print(greeting)
-# we could even get some input from the user and pass that in to our function
-name = input("What is your name? ")
-print(generate_greeting(name))
-
-
 # PARAMETER DEFAULTS
 # you can have as many params as you want
 # and you can also set a default value for a param,
@@ -48,13 +31,35 @@ print(generate_greeting(name))
 def generate_greeting(name, greeting="Howdy"):
     return greeting + ", " + name + "!"
 
+def motherlode(initial_money):
+    return initial_money * 100
 
-# now, if we only pass in a value for name, the greeting will always be "Howdy"
-print(generate_greeting(name))
-# but if we pass in a name and a greeting to our function call
-# we override the default value
-print(generate_greeting(name, "Hiya there"))
-print(generate_greeting(name, "heyyy"))
-print(generate_greeting(name, "What's crack-a-lacking"))
+# MAIN MODULE
+# each python file we write is called a "module"
+# sometimes we will want to import function into other files
+# but have one file serve as our main program
+# the code below allows us to specify what should only be run
+# if we are executing this file, not importing it
+if __name__ == "__main__":  
+  # CALLING FUNCTIONS
+  # a function definition is just a definition
+  # to actually run the code, you have to call the function
+  # when you call a function, you pass in "arguments"
+  # for each expected parameter value
+  # since our function only defined one parameter, we pass in one argument
+  print(generate_greeting("Partner"))
+  # above we are printing out the returned value from our function
+  # we could also save it to a variable and then print it or do something else with it
+  greeting = generate_greeting("Partner")
+  print(greeting)
+  # we could even get some input from the user and pass that in to our function
+  name = input("What is your name? ")
+  print(generate_greeting(name))
 
-
+  # now, if we only pass in a value for name, the greeting will always be "Howdy"
+  print(generate_greeting(name))
+  # but if we pass in a name and a greeting to our function call
+  # we override the default value  
+  print(generate_greeting("Miss", "Hiya"))
+  print(generate_greeting("Ma'am"))
+  print(generate_greeting("Sir", "What's crack-a-lackin"))
