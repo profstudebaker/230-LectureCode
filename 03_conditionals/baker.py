@@ -6,9 +6,12 @@ def generate_recipe(flour, water, salt, yeast, name_of_dough):
 
     Params
     ------
+    - flour, water, salt, yeast: floats
+    - name_of_dough: str
 
     Returns
     -------
+    - string, the recipe pretty formatted with values as integers
     '''
     return "" #TODO: return a string with all of the recipe ingredients
     # NOTE: we are not printing
@@ -19,6 +22,7 @@ def bake(selection, flour):
     # TODO: based on the value of selection, 
     # return the name and the appropriate amount of each ingredient
     # TODO: return -1 if they passed in invalid selection
+    # NOTE: we are not printing or getting user input here
     return "Test Name", 12.5, 1.666, 1 
 
 # main program part where you print and get input
@@ -29,6 +33,7 @@ if __name__ == "__main__":
     # test with integer inputs
     # test with float inputs to make sure it rounds to int
     print(generate_recipe(10, 4, 5, 6, "Sourdough Loaf"))
+    print(generate_recipe(10, 4.0678, 5, 6, "Sourdough Loaf"))
 
     # test bake with dummy values too
     # make sure valid selections work
@@ -37,6 +42,7 @@ if __name__ == "__main__":
     print(bake(7, 100)) # invalid so should return -1
 
     # assign multiple values from a function
+    # NOTE: make sure the return is not -1 before you try to unpack
     name, water, salt, yeast = bake(1, 100)
     print(name)
 
