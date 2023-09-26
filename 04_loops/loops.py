@@ -66,3 +66,21 @@ for position, card in enumerate(hand):
     # found a new max card!
     max_card = card
     max_position = position
+
+
+'''
+NESTED LOOPS
+- you can nest however many loops you want, just like if statements
+- the innermost loop will run until it terminates each time the outer loop runs
+- when starting out, very helpful to write out the variables during each iteration  
+'''
+seats = "LMNOP"
+rows = 5
+for row in range(rows):
+  # starts at 0 and goes up until but not including 5
+  for seat in seats:
+    # goes through each letter in our string
+    # before ending and incrementing row by 1
+    print(f"{row+1}{seat}", end=" ")
+  print() # new line after completion of inner loop
+  
