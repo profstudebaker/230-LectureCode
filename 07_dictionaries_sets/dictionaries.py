@@ -81,3 +81,30 @@ else:
 # check if a value is present in the dictionary
 if ['A','A','A'] in grades.values():
     print("We have a straight A student!")
+
+# data is often represented as a dictionary of dictionaries
+# where each outer key is a row's ID
+# and the inner dictionary's keys are the column names
+# mapping to the value for that row
+players = {
+    'James': {
+        'type': 'Wizard',
+        'level': 3,
+        'health': 80
+    },
+    'Larry': {
+        'type': 'Warrior',
+        'level': 1,
+        'health': 10
+    },
+    'Julia': {
+        'type': 'Giant',
+        'level': 12,
+        'health': 95
+    }
+}
+
+# you then index a given value by providing two key
+print(players['Julia']['type'])
+print(players['Larry']) # all of Larry's stats
+print(players['James']['health'])

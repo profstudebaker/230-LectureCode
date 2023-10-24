@@ -1,86 +1,63 @@
 import random
-
 """
 LOOPS
-- allow you to repeat chunks of code multiple times
-- come in two flavors: for and while, choose which one based on problem
-- keyword break stop the loop completely
-- keyword continue skips to the next iteration of the loop
+- allow you to repeat chunks of code
+- come in two flavors: for and while, you want to choose the right loop for the job
+- break stops the loop completely
+- continue skips to the next iteration
+- when you're starting out, it is helpful to draw out variables on paper
 """
-"""
+
+'''
 WHILE LOOPS
 - keep running as long as a condition is true
-- be careful not to have an infinite loop
-- can do anything a for loop can, but with less happening automatically
-"""
-number = random.randint(1,10)
-guess = int(input("Guess a number between 1 and 10: "))
-print("Generated: " + str(number))
-while guess != number: # keep allowing user to guess until they get it right
-  print("Wrong!")
-  guess = int(input("Guess a number between 1 and 10: "))
-print("CORRECT!")
+- be careful of infinite looping
+'''
 
-"""
+# create a number guessing game
+# that generates a random number between 1 and 10
+# keeps asking the user to guess the number 
+# until the user gets it right
+
+# number = random.randint(1, 10)
+# print("Generated ", number)
+# guess = int(input("Guess a number between 1 and 10: "))
+# while guess != number: 
+#     # ask them to guess again
+#     guess = int(input("Guess again: "))
+# print("Correct!")
+
+'''
 FOR LOOPS
-- commonly used to go through every item in a collection
-- use range() function if you want a pre-determined amount of times
-- use enumerate() if you want access to the iteration count and the value of the item
-"""
-hand = [2, 2, 4, 10]
-# find the highest card in your hand
-# by looping through each card and keeping track of 
-# whether or not it is higher than the last card
-max_card = hand[0] # set to first card
-for card in hand: 
-  # "card" is a new variable that is automatically 
-  # given the value of the current item
-  if card > max_card:
-    # found a new max card!
-    max_card = card
-print(max_card)
-
-# USING RANGE
+- typically used to run for a pre-determined amount of times
+- the loop variable changes depending on what you are looping through
+'''
+MAX_GUESSES = 3
+# adapt the number guessing program
+# so that the user only has MAX_GUESSES chances to guess
+# print out how many guesses are remaining
+# and then stop if they get it right
 number = random.randint(1,10)
-print("Generated: " + str(number))
-for guess in range(3): # allow the user to make 3 guesses
-  guess = int(input("Guess a number between 1 and 10: "))
-  if guess == number:
-    print("You got it!")
-    break # they got it right, so stop the loop
-  else: 
-    print("Incorrect.")
-
-# USING ENUMERATE
-hand = [2, 2, 4, 10]
-# find the highest card in your hand
-# by looping through each card and keeping track of 
-# whether or not it is higher than the last card
-max_card = hand[0] # set to first card
-max_position = 0
-for position, card in enumerate(hand): 
-  # "card" is a new variable that is automatically 
-  # given the value of the current item
-  print(f"Evaluating position {position}. Value: {card}")
-  if card > max_card:
-    # found a new max card!
-    max_card = card
-    max_position = position
-
-
+print("Generated: ", number)
+for i in range(MAX_GUESSES): # i will be 0, 1, 2
+    # i is how many times we have guessed
+    print(f"You have {MAX_GUESSES-i} guesses remaining.")
+    guess = int(input("Guess a number between 1 and 10: "))
+    if guess == number:
+        print("You are so so smart!")
+        break
+    
 '''
 NESTED LOOPS
-- you can nest however many loops you want, just like if statements
-- the innermost loop will run until it terminates each time the outer loop runs
-- when starting out, very helpful to write out the variables during each iteration  
+- you can nest however many you want, like if statements
+- want to be careful with spacing
+- the innermost loop runs for each time the outer loop runs
+  wait for inner loop to complete before next iteration of outer loop
 '''
 seats = "LMNOP"
-rows = 5
-for row in range(rows):
-  # starts at 0 and goes up until but not including 5
-  for seat in seats:
-    # goes through each letter in our string
-    # before ending and incrementing row by 1
-    print(f"{row+1}{seat}", end=" ")
-  print() # new line after completion of inner loop
-  
+num_rows = 3
+# print out theatre seats: 1L 1M 1N 1O 1P, 2L 2M ... etc
+for row in range(num_rows): # row will be 0, 1, 2
+    for seat in seats: # seat will be L, M, N, O, P
+        print(f"{row+1}{seat}")
+    print("----------")
