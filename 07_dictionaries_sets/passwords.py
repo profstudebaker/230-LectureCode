@@ -16,7 +16,7 @@ def view_password(service, username, password_dict, decrypt_dict):
     pass # delete this after you have completed the function
   
 
-def update_password(service, username, new_password, password_dict, encrypt_dict):
+def update_password(service, new_password, password_dict, encrypt_dict):
     # TODO: Finish this function
     pass # delete this after you have completed the function
   
