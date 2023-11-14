@@ -83,3 +83,13 @@ def get_progression(key_position, n_chords=4):
     for i in range(n_chords):
         chords.append(random.choice(chords_in_key))
     return ' '.join(chords)
+
+
+if __name__ == "__main__":
+    print(get_tempo(50, 70))
+    # key = get_key()
+    # key_name = key[0]
+    # key_pos = key[1]
+    key_name, key_pos = get_key()
+    print(key_name, key_pos)
+    print(get_progression(0))
